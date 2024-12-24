@@ -1,3 +1,17 @@
+#new-btn {
+    display: flex;
+    margin: 24px auto;
+    padding: 12px;
+    background-color: rgb(94, 212, 173);
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+#new-btn:hover {
+    background-color: hsl(160, 58%, 50%);
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
