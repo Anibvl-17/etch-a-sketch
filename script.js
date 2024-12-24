@@ -3,6 +3,10 @@ createGrid(16);
 
 // Make sure that 'size' is a valid number.
 function createGrid(size) {
+    console.groupCollapsed(`New grid (${size}x${size})`);
+    console.log(`Grid distribution: ${100 / size}%`);
+    console.groupEnd();
+
     for (let i = 0; i < size; i++) {;
         for (let j = 0; j < size; j++) {
             const div = document.createElement("div");
@@ -10,8 +14,7 @@ function createGrid(size) {
             div.addEventListener("mouseover", function() {
                 div.classList.add("hovered");
             });
-            div.style.flex = "1 1 " + Math.floor(100 / size) + "%";
-    
+            div.style.flex = "1 1 " + (100 / size) + "%";
             container.appendChild(div);
         }
     }
