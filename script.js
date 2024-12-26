@@ -26,7 +26,13 @@ newButton.addEventListener("click", function(){
     let error = false;
     do {
         newSize = prompt("Enter the number of squares per side:");
+        
+        if(newSize == null) {
+            break;
+        }
+        
         newSize = Number(newSize);
+        
         if(!Number.isInteger(newSize) || newSize < 2 || newSize > 100) {
             alert("Please enter a number between 2 and 100.");
             error = true;
