@@ -26,7 +26,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
-    flex: auto;
+    flex: 1 1 500px;
+    min-width: 500px;
+    max-height: 500px;
+    margin: 12px auto;
 }
 
 .grid-div {
