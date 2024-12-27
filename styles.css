@@ -32,10 +32,6 @@ body {
     margin: 12px auto;
 }
 
-.grid-div {
-    flex: 1 1 6%;
-}
-
 .hovered {
     background-color: darkcyan;
 }
