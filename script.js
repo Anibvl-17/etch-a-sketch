@@ -1,5 +1,6 @@
 let currentSize = 16;
 let rainbowMode = false;
+let eraseMode = false;
 const container = document.querySelector(".container");
 createGrid(16);
 
@@ -14,6 +15,13 @@ function createGrid(size) {
             const div = document.createElement("div");
             div.className = "grid-div";
             div.addEventListener("mouseover", function() {
+                // If a eraseMode = true, set bg-color to white
+                if(eraseMode) {
+                    div.classList.remove("hovered");
+                    div.style.backgroundColor = "white";
+                    return;
+                }
+
                 // If a div was hovered, then it shouldn't change the bg-color
                 if(rainbowMode && !div.classList.contains("hovered")) {
                     div.style.backgroundColor = randomRGB();
@@ -62,6 +70,12 @@ const rainbowModeCheckbox = document.getElementById("rainbow-mode");
 rainbowModeCheckbox.addEventListener("change", function(){
     console.log("Rainbow mode: " + this.checked);
     rainbowMode = this.checked;
+});
+
+const eraseModeCheckbox = document.getElementById("erase-mode");
+eraseModeCheckbox.addEventListener("change", function(){
+    console.log("Erase mode: " + this.checked);
+    eraseMode = this.checked;
 });
 
 function randomRGB() {
