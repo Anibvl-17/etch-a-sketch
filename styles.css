@@ -4,34 +4,50 @@ html {
 
 body {
     display: flex;
-    flex-flow: column nowrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     height: 95%;
+    padding: 24px;
 }
 
-#new-btn {
+button {
     display: flex;
-    margin: 24px auto;
+    margin: 12px auto;
     padding: 12px;
     background-color: rgb(94, 212, 173);
     border-radius: 4px;
     font-weight: 700;
 }
 
-#new-btn:hover {
+button:hover {
     background-color: hsl(160, 58%, 50%);
     cursor: pointer;
+}
+
+
+.menu {
+    flex: 1 1 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rainbow-checkbox {
+    margin: 12px auto;
+    padding: 12px;
+    font-weight: 700;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
-    flex: 1 1 500px;
-    min-width: 500px;
-    max-height: 500px;
+    flex: 1 1 600px;
+    min-height: 600px;
+    min-width: 300px;
     margin: 12px auto;
 }
 
 .hovered {
-    background-color: darkcyan;
+    background-color: black;
 }
