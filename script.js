@@ -18,7 +18,7 @@ function createGrid(size) {
                 // If a eraseMode = true, set bg-color to white
                 if(eraseMode) {
                     div.classList.remove("hovered");
-                    div.style.backgroundColor = "white";
+                    div.style.removeProperty("background-color")
                     return;
                 }
 
@@ -66,11 +66,25 @@ clearBtn.addEventListener("click", function(){
     createGrid(currentSize);
 });
 
-const rainbowModeCheckbox = document.getElementById("rainbow-mode");
-rainbowModeCheckbox.addEventListener("change", () => rainbowMode = this.checked);
+const rainbowModeCheckbox = document.querySelector(".rainbow-mode-li")
+rainbowModeCheckbox.addEventListener("click", function() {
+    rainbowMode = !rainbowMode;
+    rainbowMode ? this.style.backgroundColor = "rgb(50, 138, 189)"
+            : this.style.removeProperty("background-color");
+    eraseMode = false;
+    eraseModeCheckbox.style.removeProperty("background-color");
+    console.log(`Rainbow mode: ${rainbowMode} | Erase mode: ${eraseMode}`);
+});
 
-const eraseModeCheckbox = document.getElementById("erase-mode");
-eraseModeCheckbox.addEventListener("change", () => eraseMode = this.checked);
+const eraseModeCheckbox = document.querySelector(".erase-mode-li");
+eraseModeCheckbox.addEventListener("click", function() {
+    eraseMode = !eraseMode;
+    eraseMode ? this.style.backgroundColor = "rgb(50, 138, 189)"
+            : this.style.removeProperty("background-color");
+    rainbowMode = false;
+    rainbowModeCheckbox.style.removeProperty("background-color");
+    console.log(`Rainbow mode: ${rainbowMode} | Erase mode: ${eraseMode}`);
+});
 
 function randomRGB() {
     return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
