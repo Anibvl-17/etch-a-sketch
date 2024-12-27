@@ -67,16 +67,10 @@ clearBtn.addEventListener("click", function(){
 });
 
 const rainbowModeCheckbox = document.getElementById("rainbow-mode");
-rainbowModeCheckbox.addEventListener("change", function(){
-    console.log("Rainbow mode: " + this.checked);
-    rainbowMode = this.checked;
-});
+rainbowModeCheckbox.addEventListener("change", () => rainbowMode = this.checked);
 
 const eraseModeCheckbox = document.getElementById("erase-mode");
-eraseModeCheckbox.addEventListener("change", function(){
-    console.log("Erase mode: " + this.checked);
-    eraseMode = this.checked;
-});
+eraseModeCheckbox.addEventListener("change", () => eraseMode = this.checked);
 
 function randomRGB() {
     return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
